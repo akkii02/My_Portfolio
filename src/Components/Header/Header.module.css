@@ -1,0 +1,133 @@
+
+.header{
+  background-color: #0f1724;
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+.navbar {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid black; */
+  padding: 10px 0;
+  margin-left: 35px;
+}
+.logo {
+  font-family: "Inter", sans-serif;
+  margin: 0 30px;
+  font-size: 50px;
+  color: #c3c7cd;
+  position: relative; 
+}
+
+.logo::before {
+  content: ''; 
+  position: absolute; 
+  bottom: -2px;
+  left: 0; 
+  width: 0; 
+  height: 2px; 
+  background-color: white; 
+  transition: width 0.3s;
+
+}
+
+.logo:hover::before {
+  width: 100%;
+}
+
+.ul {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+ul .li {
+  list-style-type: none;
+  text-decoration: none;
+}
+.li a {
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: #c3c7cd;
+  font-size: 20px;
+  margin: 0 20px;
+}
+.li a:hover {
+  color: orange;
+}
+.hamburgerIcon {
+  display: none;
+}
+.hideHamburger {
+  display: none;
+}
+.iconContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon {
+  color: white;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+.icon:hover{
+  color: wheat; 
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 700px) {
+  .hamburgerIcon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar{
+    margin-left: 25px;
+  }
+  .logo{
+    margin: 0 90px 0 0 ;
+  }
+  .iconContainer{
+    display: none;
+  }
+  .logo {
+    font-size: 30px;
+  }
+  .hamburgerIcon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .ul {
+    display: flex;
+    position: absolute;
+    top: 7vh;
+    /* left: 10px; */
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent;
+    /* justify-content: space-around;
+    text-align: center; */
+    transform: translateX(-100%);
+  }
+  li {
+margin-left: -22%;
+  }
+  .ul.showMenu {
+    transform: translateX(0);
+  }
+
+  .ul li {
+    width: 90%;
+    text-align: center;
+    padding: 10px;
+  }
+
+}
